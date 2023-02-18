@@ -72,3 +72,11 @@ http_archive(
     strip_prefix = "bazel-6.0.0",
     url = "https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz",
 )
+
+http_archive(
+    name = "com_github_apple_swift_argument_parser",
+    build_file = "swift-argument-parser/BUILD",
+    sha256 = "44782ba7180f924f72661b8f457c268929ccd20441eac17301f18eff3b91ce0c",
+    strip_prefix = "swift-argument-parser-1.2.2",
+    url = "https://github.com/apple/swift-argument-parser/archive/refs/tags/1.2.2.tar.gz",
+)
