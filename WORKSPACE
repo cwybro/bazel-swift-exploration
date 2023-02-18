@@ -63,3 +63,12 @@ rules_proto_dependencies()
 
 rules_proto_toolchains()
 
+http_archive(
+    name = "com_github_bazelbuild_bazel",
+    patches = [
+        "//infra/patches:build_event_stream_java_proto.patch",
+    ],
+    sha256 = "06d3dbcba2286d45fc6479a87ccc649055821fc6da0c3c6801e73da780068397",
+    strip_prefix = "bazel-6.0.0",
+    url = "https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz",
+)
