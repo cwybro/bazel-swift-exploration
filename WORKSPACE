@@ -16,6 +16,13 @@ load(
 
 xcodeproj_rules_dependencies()
 
+http_archive(
+    name = "build_bazel_rules_apple",
+    sha256 = "2e68d159b783046c497979a0275cea8ce7720b4cbf3db17f4e0de9586b27082a",
+    strip_prefix = "rules_apple-2fb221631dec5dfbbe650bd8a614237eb46cb7db",
+    url = "https://github.com/bazelbuild/rules_apple/archive/2fb221631dec5dfbbe650bd8a614237eb46cb7db.tar.gz",
+)
+
 load(
     "@build_bazel_rules_apple//apple:repositories.bzl",
     "apple_rules_dependencies",
@@ -71,6 +78,25 @@ http_archive(
     sha256 = "06d3dbcba2286d45fc6479a87ccc649055821fc6da0c3c6801e73da780068397",
     strip_prefix = "bazel-6.0.0",
     url = "https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz",
+)
+
+http_archive(
+    name = "com_google_googleapis",
+    patches = [
+        "//infra/patches:publish_build_event_proto.patch",
+    ],
+    sha256 = "18a735ec31b7767cabfce0a8f71e7e8e74c11aa18fbd50fbdc0db5b26c2f6278",
+    strip_prefix = "googleapis-f9d9c0418f10c2352fbe4515cac9e7072f9924a2",
+    url = "https://github.com/googleapis/googleapis/archive/f9d9c0418f10c2352fbe4515cac9e7072f9924a2.tar.gz",
+)
+
+load(
+    "@com_google_googleapis//:repository_rules.bzl",
+    "switched_rules_by_language",
+)
+
+switched_rules_by_language(
+    name = "com_google_googleapis_imports",
 )
 
 http_archive(

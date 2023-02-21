@@ -1,2 +1,8 @@
 build --repository_cache=/tmp/bazel/repository_cache
 build --disk_cache=/tmp/bazel/disk_cache
+test:bep_fixture --runs_per_test=10
+test:bep_fixture --runs_per_test_detects_flakes=true
+test:bep_fixture -t-
+test:bep_fixture --test_env=CREATE_XCRESULT_BUNDLE=1
+build:bes_server --bes_backend=grpc://localhost:9000
+build:bes_server --bes_upload_mode=fully_async
