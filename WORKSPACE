@@ -113,3 +113,11 @@ http_archive(
     strip_prefix = "pathkit-1.0.1",
     url = "https://github.com/kylef/PathKit/archive/refs/tags/1.0.1.tar.gz",
 )
+
+http_archive(
+    name = "com_github_stencilproject_stencil",
+    build_file = "stencil/BUILD",
+    sha256 = "7e1d7b72cd07af0b31d8db6671540c357005d18f30c077f2dff0f84030995010",
+    strip_prefix = "Stencil-0.15.1",
+    url = "https://github.com/stencilproject/Stencil/archive/refs/tags/0.15.1.tar.gz",
+)
