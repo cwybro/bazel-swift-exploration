@@ -106,3 +106,10 @@ http_archive(
     strip_prefix = "swift-argument-parser-1.2.2",
     url = "https://github.com/apple/swift-argument-parser/archive/refs/tags/1.2.2.tar.gz",
 )
+
+http_archive(
+    name = "com_github_kylef_pathkit",
+    build_file = "pathkit/BUILD",
+    strip_prefix = "pathkit-1.0.1",
+    url = "https://github.com/kylef/PathKit/archive/refs/tags/1.0.1.tar.gz",
+)
