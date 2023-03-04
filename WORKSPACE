@@ -121,3 +121,10 @@ http_archive(
     strip_prefix = "Stencil-0.15.1",
     url = "https://github.com/stencilproject/Stencil/archive/refs/tags/0.15.1.tar.gz",
 )
+
+http_archive(
+    name = "com_github_jpsim_yams",
+    sha256 = "16f0d7e4aecdd241c715ba7fa9a669b0655b076c424e05c6b6a7ea2267f9b3dd",
+    strip_prefix = "Yams-5.0.5",
+    url = "https://github.com/jpsim/Yams/archive/refs/tags/5.0.5.tar.gz",
+)
