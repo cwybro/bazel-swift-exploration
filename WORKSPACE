@@ -106,3 +106,25 @@ http_archive(
     strip_prefix = "swift-argument-parser-1.2.2",
     url = "https://github.com/apple/swift-argument-parser/archive/refs/tags/1.2.2.tar.gz",
 )
+
+http_archive(
+    name = "com_github_kylef_pathkit",
+    build_file = "pathkit/BUILD",
+    strip_prefix = "pathkit-1.0.1",
+    url = "https://github.com/kylef/PathKit/archive/refs/tags/1.0.1.tar.gz",
+)
+
+http_archive(
+    name = "com_github_stencilproject_stencil",
+    build_file = "stencil/BUILD",
+    sha256 = "7e1d7b72cd07af0b31d8db6671540c357005d18f30c077f2dff0f84030995010",
+    strip_prefix = "Stencil-0.15.1",
+    url = "https://github.com/stencilproject/Stencil/archive/refs/tags/0.15.1.tar.gz",
+)
+
+http_archive(
+    name = "com_github_jpsim_yams",
+    sha256 = "16f0d7e4aecdd241c715ba7fa9a669b0655b076c424e05c6b6a7ea2267f9b3dd",
+    strip_prefix = "Yams-5.0.5",
+    url = "https://github.com/jpsim/Yams/archive/refs/tags/5.0.5.tar.gz",
+)

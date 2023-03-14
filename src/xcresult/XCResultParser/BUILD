@@ -5,21 +5,19 @@ load(
 )
 
 swift_library(
-    name = "BEPCommands",
+    name = "XCResultParser",
     srcs = glob(["Sources/**/*.swift"]),
-    module_name = "BEPCommands",
-    visibility = ["//visibility:public"],
+    module_name = "XCResultParser",
     deps = [
-        "//src/bep/BEPCore",
+        "//src/xcresult/XCResultCommands:XCResultTypes_Generated",
         "@com_github_apple_swift_argument_parser//:ArgumentParser",
         "@com_github_kylef_pathkit//:PathKit",
     ],
 )
 
 swift_binary(
-    name = "bep",
-    visibility = ["//visibility:public"],
+    name = "xcresultparser",
     deps = [
-        ":BEPCommands",
+        ":XCResultParser",
     ],
 )

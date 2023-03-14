@@ -1,0 +1,6 @@
+overrides:
+  - type: ActionTestableSummary
+    properties:
+      - name: tests
+        generatedType: ActionTestSummaryIdentifiableObject
+        overrideType: ActionTestSummaryGroup
