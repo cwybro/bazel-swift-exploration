@@ -7,26 +7,16 @@ internal struct ParseCommand: ParsableCommand {
         commandName: "parse",
         abstract: "A tool for parsing Bazel Build Event Protocol binary files.")
 
+    @Option(help: "Path to BEP file.")
+    internal var bepPath: String
+
     internal func run() throws {
-        print("ParseCommand")
-        let bepPath: String = "/Users/connorwybranowski/Downloads/ExampleTests_flaky_bep"
         let parser: BEPParserImp = .init()
-        let flakyTestTargetMap: FlakyTestTargetMapImp = .init()
-        let flakyTargets: [FlakyTestTarget] = flakyTestTargetMap.map(
-            events: try parser.readEvents(bepPath: bepPath))
-        print("Found \(flakyTargets.count) flaky test targets:")
-        flakyTargets.forEach {
-            print("""
-            - label: \($0.label)
-              runsPerTest: \($0.runsPerTest)
-              totalRunCount: \($0.totalRunCount)
-              passedCount: \($0.passedCount)
-              failedCount: \($0.failedCount)
-              wallTimeDurationMillis: \($0.wallTimeDurationMillis)
-              systemTimeDurationMillis: \($0.systemTimeDurationMillis)
-              failedRunArtifactPaths:
-            \($0.failedRunArtifactPaths.map { "\t- \($0)" }.joined(separator: "\n"))
-            """)
+        let buildEvents = try parser.readEvents(bepPath: bepPath)
+        buildEvents.forEach { event in
+            event.namedSetOfFiles.files.forEach { file in
+                print("- \(file)")
+            }
         }
     }
 }

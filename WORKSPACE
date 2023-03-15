@@ -128,3 +128,11 @@ http_archive(
     strip_prefix = "Yams-5.0.5",
     url = "https://github.com/jpsim/Yams/archive/refs/tags/5.0.5.tar.gz",
 )
+
+http_archive(
+    name = "com_github_pointfreeco_swift_snapshot_testing",
+    build_file = "swift-snapshot-testing/BUILD",
+    sha256 = "1958ec401eab4fd9c9e659f85641fa29a1d38d2fd6d5cc733e411fabf5324cfa",
+    strip_prefix = "swift-snapshot-testing-1.11.0",
+    url = "https://github.com/pointfreeco/swift-snapshot-testing/archive/refs/tags/1.11.0.tar.gz",
+)

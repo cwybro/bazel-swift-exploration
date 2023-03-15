@@ -8,3 +8,6 @@ test:bep_fixture --zip_undeclared_test_outputs=false
 test:bep_fixture --build_event_binary_file=/tmp/bazel/bep
 build:bes_server --bes_backend=grpc://localhost:9000
 build:bes_server --bes_upload_mode=fully_async
+test:test_undeclared_outputs --zip_undeclared_test_outputs=false
+test:test_undeclared_outputs --build_event_binary_file=/tmp/bazel/bep
+
