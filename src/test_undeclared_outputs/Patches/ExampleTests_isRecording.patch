@@ -1,0 +1,14 @@
+diff --git a/src/test_undeclared_outputs/Example/Tests/ExampleTests.swift b/src/test_undeclared_outputs/Example/Tests/ExampleTests.swift
+index 98326b9..984029d 100644
+--- a/src/test_undeclared_outputs/Example/Tests/ExampleTests.swift
++++ b/src/test_undeclared_outputs/Example/Tests/ExampleTests.swift
+@@ -5,7 +5,8 @@ class ExampleTests: XCTestCase {
+
+     func testExample() throws {
+         // GIVEN
+-        let subject: String = "subject"
++        isRecording = true
++        let subject: String = "subject_2"
+
+         // THEN
+         assertSnapshot(matching: subject, as: .lines)
