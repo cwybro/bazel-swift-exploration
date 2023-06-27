@@ -25,6 +25,33 @@ swift_grpc_library(
     deps = [":publish_build_event_proto_swift"],
 )
 
+proto_library(
+    name = "health_proto",
+    srcs = ["Health/health.proto"],
+)
+
+swift_proto_library(
+    name = "health_proto_swift",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":health_proto",
+    ],
+)
+
+swift_grpc_library(
+    name = "health_server_services_swift",
+    srcs = [":health_proto"],
+    flavor = "server",
+    deps = [":health_proto_swift"],
+)
+
+swift_grpc_library(
+    name = "health_client_services_swift",
+    srcs = [":health_proto"],
+    flavor = "client",
+    deps = [":health_proto_swift"],
+)
+
 swift_library(
     name = "BESServer",
     srcs = glob(["Sources/**/*.swift"]),
