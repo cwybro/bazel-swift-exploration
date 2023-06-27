@@ -57,6 +57,7 @@ swift_library(
     srcs = glob(["Sources/**/*.swift"]),
     module_name = "BESServer",
     deps = [
+        ":health_server_services_swift",
         ":publish_build_event_server_services_swift",
         "//src/bep/BEPCore",
         "//src/bep/BEPCore:BEP_Protos",
@@ -73,9 +74,19 @@ swift_binary(
 
 xcodeproj(
     name = "project",
+    bazel_path = "/usr/local/bin/bazelisk",
     project_name = "project",
     tags = ["manual"],
     top_level_targets = [
         ":publish_build_event_server",
+        ":sandbox",
+    ],
+)
+
+swift_binary(
+    name = "sandbox",
+    srcs = ["Sandbox/main.swift"],
+    deps = [
+        ":health_client_services_swift",
     ],
 )
