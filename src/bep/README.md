@@ -6,3 +6,4 @@
     - [BESServer](BESServer/Sources/PublishBuildEventServer.swift)
     - [BuildEventServerInterceptor](BESServer/Sources/Interceptors/BuildEventServerInterceptor.swift): Capture `BuildEventStream_BuildEvent` from `Google_Devtools_Build_V1_PublishBuildToolEventStreamRequest` and store in `UserInfo` for use in future interceptors.
     - [FlakyTestTargetServerInterceptor](BESServer/Sources/Interceptors/FlakyTestTargetServerInterceptor.swift): Consume `UserInfo`-stored `BuildEventStream_BuildEvent` to detect flaky tests in streamed builds.
+    - [Health](BESServer/Health/health.proto) proto service: Facilitate health check to obtain status and PID of BES.
