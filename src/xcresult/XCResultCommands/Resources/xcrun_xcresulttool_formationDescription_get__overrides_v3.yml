@@ -4,3 +4,8 @@ overrides:
       - name: tests
         generatedType: ActionTestSummaryIdentifiableObject
         overrideType: ActionTestSummaryGroup
+  - type: ActionTestSummaryGroup
+    properties:
+      - name: subtests
+        generatedType: ActionTestSummaryIdentifiableObject
+        overrideType: ActionTestSummaryGroup

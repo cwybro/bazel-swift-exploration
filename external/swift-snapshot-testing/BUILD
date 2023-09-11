@@ -12,6 +12,9 @@ swift_library(
         ],
         allow_empty = False,
     ),
+    copts = [
+        "-suppress-warnings",
+    ],
     module_name = "SnapshotTesting",
     visibility = ["//visibility:public"],
 )
