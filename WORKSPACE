@@ -136,3 +136,9 @@ http_archive(
     strip_prefix = "swift-snapshot-testing-1.11.0",
     url = "https://github.com/pointfreeco/swift-snapshot-testing/archive/refs/tags/1.11.0.tar.gz",
 )
+
+http_archive(
+    name = "com_github_bazel_swift_private_repository",
+    strip_prefix = "bazel-swift-private-repository-9f5f94a816618498c4f5bdae56b6ef2ce754ed61",
+    url = "https://github.com/cwybro/bazel-swift-private-repository/archive/9f5f94a816618498c4f5bdae56b6ef2ce754ed61.zip",
+)

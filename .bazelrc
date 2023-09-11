@@ -10,4 +10,5 @@ build:bes_server --bes_backend=grpc://localhost:9000
 build:bes_server --bes_upload_mode=fully_async
 test:test_undeclared_outputs --zip_undeclared_test_outputs=false
 test:test_undeclared_outputs --build_event_binary_file=/tmp/bazel/bep
-
+sync:credential_helper --credential_helper=*.github.com=%workspace%/demo/credential-helper
+sync:credential_helper --credential_helper_cache_duration=0

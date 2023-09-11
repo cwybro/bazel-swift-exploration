@@ -26,3 +26,16 @@ test_undeclared_outputs_demo:
 	git apply src/test_undeclared_outputs/Patches/ExampleTests_isRecording.patch && \
 	bazelisk test //src/test_undeclared_outputs/Example:$(target) -t- --config=test_undeclared_outputs || true && \
 	bazelisk run //src/test_undeclared_outputs/Commands:test-undeclared-outputs -- extract-snapshots --bep-path=/tmp/bazel/bep --workspace-path=$$(pwd)
+
+# [CW] 9/10/23 - This demo requires a GitHub Private Repository and GitHub Access Token to function as expected.
+.PHONY credential_helper_demo:
+credential_helper_demo: github_access_token ?= placeholder
+credential_helper_demo:
+	rm -rf demo && \
+	mkdir -p demo && \
+	bazelisk build //src/credential_helper/CredentialHelperCommands:credential-helper && \
+	cp bazel-bin/src/credential_helper/CredentialHelperCommands/credential-helper demo && \
+	bazelisk sync --only=com_github_bazel_swift_private_repository --config=credential_helper || true && \
+	echo $(github_access_token) > demo/credentials.txt && \
+	bazelisk sync --only=com_github_bazel_swift_private_repository --config=credential_helper && \
+	rm -rf demo
