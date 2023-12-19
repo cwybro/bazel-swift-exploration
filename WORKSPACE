@@ -107,7 +107,8 @@ http_archive(
 http_archive(
     name = "com_github_kylef_pathkit",
     build_file = "pathkit/BUILD",
-    strip_prefix = "pathkit-1.0.1",
+    sha256 = "fcda78cdf12c1c6430c67273333e060a9195951254230e524df77841a0235dae",
+    strip_prefix = "PathKit-1.0.1",
     url = "https://github.com/kylef/PathKit/archive/refs/tags/1.0.1.tar.gz",
 )
 
