@@ -39,3 +39,7 @@ credential_helper_demo:
 	echo $(github_access_token) > demo/credentials.txt && \
 	bazelisk sync --only=com_github_bazel_swift_private_repository --config=credential_helper && \
 	rm -rf demo
+
+.PHONY sandbox:
+sandbox:
+	bazelisk run //src/sandbox:sandbox
