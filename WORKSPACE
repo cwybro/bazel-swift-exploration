@@ -150,3 +150,11 @@ http_archive(
     strip_prefix = "swift-cmark-0.2.0",
     url = "https://github.com/apple/swift-cmark/archive/refs/tags/0.2.0.tar.gz",
 )
+
+http_archive(
+    name = "com_github_apple_swift_markdown",
+    build_file = "com_github_apple_swift_markdown/BUILD",
+    sha256 = "0648c94b8ed5412591d48aee69a22a853062751b219d29426c8c4616b587f1aa",
+    strip_prefix = "swift-markdown-0.2.0",
+    url = "https://github.com/apple/swift-markdown/archive/refs/tags/0.2.0.tar.gz",
+)
