@@ -165,3 +165,11 @@ http_archive(
     strip_prefix = "swift-syntax-509.0.0",
     url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.0.0.tar.gz",
 )
+
+http_archive(
+    name = "com_github_apple_swift_format",
+    build_file = "com_github_apple_swift_format/BUILD",
+    sha256 = "3041b470f6de7c156cf5898bc59645073c29def8dea66f9f356681163cae371e",
+    strip_prefix = "swift-format-509.0.0",
+    url = "https://github.com/apple/swift-format/archive/refs/tags/509.0.0.tar.gz",
+)
