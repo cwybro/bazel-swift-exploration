@@ -142,3 +142,34 @@ http_archive(
     strip_prefix = "bazel-swift-private-repository-9f5f94a816618498c4f5bdae56b6ef2ce754ed61",
     url = "https://github.com/cwybro/bazel-swift-private-repository/archive/9f5f94a816618498c4f5bdae56b6ef2ce754ed61.zip",
 )
+
+http_archive(
+    name = "com_github_apple_swift_cmark",
+    build_file = "com_github_apple_swift_cmark/BUILD",
+    sha256 = "f22968ffca65bf23c888b48a3dffe16d01bd3a4fc7b37832ffa3a9ad729bcc5e",
+    strip_prefix = "swift-cmark-0.2.0",
+    url = "https://github.com/apple/swift-cmark/archive/refs/tags/0.2.0.tar.gz",
+)
+
+http_archive(
+    name = "com_github_apple_swift_markdown",
+    build_file = "com_github_apple_swift_markdown/BUILD",
+    sha256 = "0648c94b8ed5412591d48aee69a22a853062751b219d29426c8c4616b587f1aa",
+    strip_prefix = "swift-markdown-0.2.0",
+    url = "https://github.com/apple/swift-markdown/archive/refs/tags/0.2.0.tar.gz",
+)
+
+http_archive(
+    name = "com_github_apple_swift_syntax",
+    sha256 = "1cddda9f7d249612e3d75d4caa8fd9534c0621b8a890a7d7524a4689bce644f1",
+    strip_prefix = "swift-syntax-509.0.0",
+    url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.0.0.tar.gz",
+)
+
+http_archive(
+    name = "com_github_apple_swift_format",
+    build_file = "com_github_apple_swift_format/BUILD",
+    sha256 = "3041b470f6de7c156cf5898bc59645073c29def8dea66f9f356681163cae371e",
+    strip_prefix = "swift-format-509.0.0",
+    url = "https://github.com/apple/swift-format/archive/refs/tags/509.0.0.tar.gz",
+)
