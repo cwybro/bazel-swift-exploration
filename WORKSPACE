@@ -158,3 +158,10 @@ http_archive(
     strip_prefix = "swift-markdown-0.2.0",
     url = "https://github.com/apple/swift-markdown/archive/refs/tags/0.2.0.tar.gz",
 )
+
+http_archive(
+    name = "com_github_apple_swift_syntax",
+    sha256 = "1cddda9f7d249612e3d75d4caa8fd9534c0621b8a890a7d7524a4689bce644f1",
+    strip_prefix = "swift-syntax-509.0.0",
+    url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.0.0.tar.gz",
+)
