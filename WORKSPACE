@@ -142,3 +142,11 @@ http_archive(
     strip_prefix = "bazel-swift-private-repository-9f5f94a816618498c4f5bdae56b6ef2ce754ed61",
     url = "https://github.com/cwybro/bazel-swift-private-repository/archive/9f5f94a816618498c4f5bdae56b6ef2ce754ed61.zip",
 )
+
+http_archive(
+    name = "com_github_apple_swift_cmark",
+    build_file = "com_github_apple_swift_cmark/BUILD",
+    sha256 = "f22968ffca65bf23c888b48a3dffe16d01bd3a4fc7b37832ffa3a9ad729bcc5e",
+    strip_prefix = "swift-cmark-0.2.0",
+    url = "https://github.com/apple/swift-cmark/archive/refs/tags/0.2.0.tar.gz",
+)
