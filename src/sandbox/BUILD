@@ -5,7 +5,16 @@ load(
 
 swift_binary(
     name = "sandbox",
-    srcs = [
-        "Sources/main.swift",
+    srcs = glob(
+        [
+            "Sources/**/*.swift",
+        ],
+        allow_empty = False,
+    ),
+    deps = [
+        "@com_github_apple_swift_syntax//:SwiftParser",
+        "@com_github_apple_swift_syntax//:SwiftSyntax",
+        "@com_github_apple_swift_syntax//:SwiftSyntaxBuilder",
+        "@com_github_stencilproject_stencil//:Stencil",
     ],
 )
