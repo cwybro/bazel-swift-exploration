@@ -148,9 +148,9 @@ http_archive(
 
 http_archive(
     name = "com_github_apple_swift_syntax",
-    sha256 = "1cddda9f7d249612e3d75d4caa8fd9534c0621b8a890a7d7524a4689bce644f1",
-    strip_prefix = "swift-syntax-509.0.0",
-    url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.0.0.tar.gz",
+    sha256 = "f070fd44db9b33f430fd5b5d2700f1e2001c0028711859600e80cc975074fab0",
+    strip_prefix = "swift-syntax-509.1.0",
+    url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.1.0.tar.gz",
 )
 
 http_archive(
