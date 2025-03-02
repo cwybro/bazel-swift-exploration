@@ -4,23 +4,9 @@ load(
 )
 
 http_archive(
-    name = "com_github_buildbuddy_io_rules_xcodeproj",
-    sha256 = "1e2f40eaee520093343528ac9a4a9180b0500cdd83b1e5e2a95abc8c541686e2",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.1.0/release.tar.gz",
-)
-
-load(
-    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:repositories.bzl",
-    "xcodeproj_rules_dependencies",
-)
-
-xcodeproj_rules_dependencies()
-
-http_archive(
     name = "build_bazel_rules_apple",
-    sha256 = "2e68d159b783046c497979a0275cea8ce7720b4cbf3db17f4e0de9586b27082a",
-    strip_prefix = "rules_apple-2fb221631dec5dfbbe650bd8a614237eb46cb7db",
-    url = "https://github.com/bazelbuild/rules_apple/archive/2fb221631dec5dfbbe650bd8a614237eb46cb7db.tar.gz",
+    sha256 = "7d10bbf8ec7bf5d6542122babbb3464e643e981d01967b4d600af392b868d817",
+    url = "https://github.com/bazelbuild/rules_apple/releases/download/3.19.1/rules_apple.3.19.1.tar.gz",
 )
 
 load(
