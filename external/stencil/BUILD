@@ -9,6 +9,6 @@ swift_library(
     module_name = "Stencil",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_kylef_pathkit//:PathKit",
+        "@pathkit//:PathKit",
     ],
 )

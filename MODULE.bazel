@@ -1,0 +1,91 @@
+module(
+    name = "bazel_swift_exploration",
+)
+
+bazel_dep(
+    name = "bazel_skylib",
+    version = "1.7.1",
+)
+
+bazel_dep(
+    name = "rules_apple",
+    version = "3.20.1",
+    repo_name = "build_bazel_rules_apple",
+)
+
+bazel_dep(
+    name = "rules_swift",
+    version = "2.4.0",
+    repo_name = "build_bazel_rules_swift",
+)
+
+bazel_dep(
+    name = "apple_support",
+    version = "1.15.1",
+    repo_name = "build_bazel_apple_support",
+)
+
+# BAZEL_VERSION = "7.3.1"
+
+# bazel_dep(
+#     name = "bazel",
+#     version = BAZEL_VERSION,
+# )
+
+# archive_override(
+#     module_name = "bazel",
+#     urls = [
+#         "https://github.com/bazelbuild/bazel/archive/refs/tags/%s.tar.gz" % BAZEL_VERSION,
+#     ],
+#     strip_prefix = "bazel-%s" % BAZEL_VERSION,
+#     integrity = "sha256-sXKZaS4xx0FnsKiyZytmt+ga6xSfdvJ2wksF2gh4jrk=",
+# )
+
+# archive_override(
+#     module_name = "googleapis",
+#     integrity = "sha256-sXKZaS4xx0FnsKiyZytmt+ga6xSfdvJ2wksF2gh4jrk=",
+#     urls = [
+#         "https://github.com/bazelbuild/bazel/archive/refs/tags/%s.tar.gz" % BAZEL_VERSION,
+#     ],
+#     strip_prefix = "bazel-%s/third_party/googleapis" % BAZEL_VERSION,
+# )
+
+# archive_override(
+#     module_name = "remoteapis",
+#     integrity = "sha256-sXKZaS4xx0FnsKiyZytmt+ga6xSfdvJ2wksF2gh4jrk=",
+#     urls = [
+#         "https://github.com/bazelbuild/bazel/archive/refs/tags/%s.tar.gz" % BAZEL_VERSION,
+#     ],
+#     strip_prefix = "bazel-%s/third_party/remoteapis" % BAZEL_VERSION,
+# )
+
+bazel_dep(
+    name = "protobuf",
+    version = "21.7",
+    repo_name = "com_google_protobuf",
+)
+
+bazel_dep(
+    name = "rules_proto",
+    version = "5.3.0-21.7",
+)
+
+bazel_dep(
+    name = "pathkit",
+    version = "1.0.1",
+)
+bazel_dep(
+    name = "swift_argument_parser",
+    version = "1.3.1.1",
+)
+
+non_module_dependencies = use_extension(
+    "//:extensions.bzl",
+    "non_module_dependencies",
+)
+use_repo(
+    non_module_dependencies,
+    "com_github_stencilproject_stencil",
+    "com_github_pointfreeco_swift_snapshot_testing",
+    "com_github_bazel_swift_private_repository",
+)

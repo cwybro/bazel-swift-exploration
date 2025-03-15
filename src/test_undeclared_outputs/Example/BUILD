@@ -1,11 +1,11 @@
 load(
+    "@build_bazel_rules_apple//apple:ios.bzl",
+    "ios_unit_test",
+)
+load(
     "@build_bazel_rules_swift//swift:swift.bzl",
     "swift_library",
     "swift_test",
-)
-load(
-    "@build_bazel_rules_apple//apple:ios.bzl",
-    "ios_unit_test",
 )
 
 filegroup(
@@ -45,8 +45,8 @@ ios_unit_test(
     name = "ExampleTests_ios_unit_test",
     data = [":ExampleTests_Snapshots"],
     env = {
-        "TEST_UNDECLARED_OUTPUTS_DIR": "$TEST_UNDECLARED_OUTPUTS_DIR",
-        "RUNFILES_DIR": "$RUNFILES_DIR",
+        "TEST_UNDECLARED_OUTPUTS_DIR": "$$TEST_UNDECLARED_OUTPUTS_DIR",
+        "RUNFILES_DIR": "$$RUNFILES_DIR",
     },
     minimum_os_version = "16.0",
     runner = "@build_bazel_rules_apple//apple/testing/default_runner:ios_xctestrun_ordered_runner",
