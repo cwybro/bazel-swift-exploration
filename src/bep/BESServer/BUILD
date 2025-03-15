@@ -1,28 +1,33 @@
 load(
-    "@build_bazel_rules_swift//swift:swift.bzl",
-    "swift_binary",
-    "swift_grpc_library",
-    "swift_library",
+    "@build_bazel_rules_swift//proto:swift_proto_library.bzl",
     "swift_proto_library",
 )
 load(
-    "@protobuf//bazel:proto_library.bzl",
+    "@build_bazel_rules_swift//swift:swift.bzl",
+    "swift_binary",
+    "swift_library",
+)
+load(
+    "@rules_proto//proto:defs.bzl",
     "proto_library",
 )
 
 swift_proto_library(
-    name = "publish_build_event_proto_swift",
-    visibility = ["//visibility:public"],
-    deps = [
-        "@com_google_googleapis//google/devtools/build/v1:publish_build_event_proto",
+    name = "build_proto_swift",
+    protos = [
+        "@googleapis//google/devtools/build/v1:build_proto",
     ],
+    visibility = ["//visibility:public"],
 )
 
-swift_grpc_library(
+swift_proto_library(
     name = "publish_build_event_server_services_swift",
-    srcs = ["@com_google_googleapis//google/devtools/build/v1:publish_build_event_proto"],
-    flavor = "server",
-    deps = [":publish_build_event_proto_swift"],
+    compilers = [
+        "@build_bazel_rules_swift//proto/compilers:swift_proto",
+        "@build_bazel_rules_swift//proto/compilers:swift_server_proto",
+    ],
+    protos = ["@googleapis//google/devtools/build/v1:build_proto"],
+    deps = [":build_proto_swift"],
 )
 
 proto_library(
@@ -32,23 +37,29 @@ proto_library(
 
 swift_proto_library(
     name = "health_proto_swift",
-    visibility = ["//visibility:public"],
-    deps = [
+    protos = [
         ":health_proto",
     ],
+    visibility = ["//visibility:public"],
 )
 
-swift_grpc_library(
+swift_proto_library(
     name = "health_server_services_swift",
-    srcs = [":health_proto"],
-    flavor = "server",
+    compilers = [
+        "@build_bazel_rules_swift//proto/compilers:swift_proto",
+        "@build_bazel_rules_swift//proto/compilers:swift_server_proto",
+    ],
+    protos = [":health_proto"],
     deps = [":health_proto_swift"],
 )
 
-swift_grpc_library(
+swift_proto_library(
     name = "health_client_services_swift",
-    srcs = [":health_proto"],
-    flavor = "client",
+    compilers = [
+        "@build_bazel_rules_swift//proto/compilers:swift_client_proto",
+        "@build_bazel_rules_swift//proto/compilers:swift_proto",
+    ],
+    protos = [":health_proto"],
     deps = [":health_proto_swift"],
 )
 
@@ -60,7 +71,7 @@ swift_library(
         ":health_server_services_swift",
         ":publish_build_event_server_services_swift",
         "//src/bep/BEPCore",
-        "//src/bep/BEPCore:BEP_Protos",
+        "//src/bep/BEPCore:BuildEventStreamProtoSwift",
     ],
 )
 

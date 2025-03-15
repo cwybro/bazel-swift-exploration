@@ -39,3 +39,7 @@ credential_helper_demo:
 .PHONY sandbox:
 sandbox:
 	bazelisk run //src/sandbox:sandbox
+
+.PHONY update_lockfile:
+update_lockfile:
+	bazelisk mod deps --lockfile_mode=update

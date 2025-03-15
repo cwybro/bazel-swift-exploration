@@ -15,7 +15,7 @@ swift_library(
     module_name = "TestKit",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_kylef_pathkit//:PathKit",
         "@com_github_pointfreeco_swift_snapshot_testing//:SnapshotTesting",
+        "@pathkit//:PathKit",
     ],
 )

@@ -9,10 +9,10 @@ swift_library(
     srcs = glob(["Sources/**/*.swift"]),
     module_name = "XCResultCommands",
     deps = [
-        "@com_github_apple_swift_argument_parser//:ArgumentParser",
-        "@com_github_jpsim_yams//:Yams",
-        "@com_github_kylef_pathkit//:PathKit",
         "@com_github_stencilproject_stencil//:Stencil",
+        "@pathkit//:PathKit",
+        "@swift_argument_parser//:ArgumentParser",
+        "@yams//:Yams",
     ],
 )
 

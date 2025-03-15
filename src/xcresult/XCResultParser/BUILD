@@ -10,8 +10,8 @@ swift_library(
     module_name = "XCResultParser",
     deps = [
         "//src/xcresult/XCResultCommands:XCResultTypes_Generated",
-        "@com_github_apple_swift_argument_parser//:ArgumentParser",
-        "@com_github_kylef_pathkit//:PathKit",
+        "@pathkit//:PathKit",
+        "@swift_argument_parser//:ArgumentParser",
     ],
 )
 
