@@ -4,23 +4,9 @@ load(
 )
 
 http_archive(
-    name = "com_github_buildbuddy_io_rules_xcodeproj",
-    sha256 = "1e2f40eaee520093343528ac9a4a9180b0500cdd83b1e5e2a95abc8c541686e2",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.1.0/release.tar.gz",
-)
-
-load(
-    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:repositories.bzl",
-    "xcodeproj_rules_dependencies",
-)
-
-xcodeproj_rules_dependencies()
-
-http_archive(
     name = "build_bazel_rules_apple",
-    sha256 = "2e68d159b783046c497979a0275cea8ce7720b4cbf3db17f4e0de9586b27082a",
-    strip_prefix = "rules_apple-2fb221631dec5dfbbe650bd8a614237eb46cb7db",
-    url = "https://github.com/bazelbuild/rules_apple/archive/2fb221631dec5dfbbe650bd8a614237eb46cb7db.tar.gz",
+    sha256 = "7d10bbf8ec7bf5d6542122babbb3464e643e981d01967b4d600af392b868d817",
+    url = "https://github.com/bazelbuild/rules_apple/releases/download/3.19.1/rules_apple.3.19.1.tar.gz",
 )
 
 load(
@@ -110,7 +96,8 @@ http_archive(
 http_archive(
     name = "com_github_kylef_pathkit",
     build_file = "pathkit/BUILD",
-    strip_prefix = "pathkit-1.0.1",
+    integrity = "sha256-/Np4zfEsHGQwxnJzMz4GCpGVlRJUIw5STfd4QaAjXa4=",
+    strip_prefix = "PathKit-1.0.1",
     url = "https://github.com/kylef/PathKit/archive/refs/tags/1.0.1.tar.gz",
 )
 
@@ -161,9 +148,9 @@ http_archive(
 
 http_archive(
     name = "com_github_apple_swift_syntax",
-    sha256 = "1cddda9f7d249612e3d75d4caa8fd9534c0621b8a890a7d7524a4689bce644f1",
-    strip_prefix = "swift-syntax-509.0.0",
-    url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.0.0.tar.gz",
+    sha256 = "f070fd44db9b33f430fd5b5d2700f1e2001c0028711859600e80cc975074fab0",
+    strip_prefix = "swift-syntax-509.1.0",
+    url = "https://github.com/apple/swift-syntax/archive/refs/tags/509.1.0.tar.gz",
 )
 
 http_archive(

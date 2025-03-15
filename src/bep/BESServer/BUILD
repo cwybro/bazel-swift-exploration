@@ -6,8 +6,8 @@ load(
     "swift_proto_library",
 )
 load(
-    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:defs.bzl",
-    "xcodeproj",
+    "@protobuf//bazel:proto_library.bzl",
+    "proto_library",
 )
 
 swift_proto_library(
@@ -69,17 +69,6 @@ swift_binary(
     srcs = ["Server/main.swift"],
     deps = [
         ":BESServer",
-    ],
-)
-
-xcodeproj(
-    name = "project",
-    bazel_path = "/usr/local/bin/bazelisk",
-    project_name = "project",
-    tags = ["manual"],
-    top_level_targets = [
-        ":publish_build_event_server",
-        ":sandbox",
     ],
 )
 
